@@ -28,20 +28,20 @@ static_resources:
               - match:
                   prefix: /
                 route:
-                  host_rewrite: www.google.com
-                  cluster: service_google
+                  host_rewrite: api.twilio.com
+                  cluster: service_twilio
           http_filters:
           - name: envoy.router
   clusters:
-  - name: service_google
+  - name: service_twilio
     connect_timeout: 0.25s
     type: LOGICAL_DNS
     dns_lookup_family: V4_ONLY
     lb_policy: ROUND_ROBIN
     hosts:
     - socket_address:
-        address: google.com
+        address: api.twilio.com
         port_value: 443
     tls_context:
-      sni: www.google.com
+      sni: api.twilio.com
 
