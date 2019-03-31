@@ -1,4 +1,5 @@
-let $APIRoot = "https://api.twilio.com"
+// let $APIRoot = "https://api.twilio.com"
+let $APIRoot = "http://localhost/"
 
 const Mandatory = function ($ParameterName) {
     throw new Error(`The ${$ParameterName} parameter is mandatory`);
